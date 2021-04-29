@@ -1,15 +1,17 @@
 //alert('Testing to see if it works')
-
 function loanCalculator() {
 
+    const totalAamount = document.querySelector('#amount');
+    const monthsPay = document.querySelector('#months');
+    const interestRate = document.querySelector('#rate');
 
-
-    const amount = document.querySelector('.amount').value;
-    const monthsPay = document.querySelector('.months').value;
-    const interestRate = document.querySelector('.rate').value;
 
     // The formula for the calculation 
 
     let interest = (amount * (rate * 0.01)) / months;
+
+    const total = ((amount / months) + interest).toFixed(2);
+
+    document.querySelector('.total').textContent = "EMI : (₹)" + total;
 
 }
